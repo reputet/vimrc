@@ -20,8 +20,9 @@ Plug 'scrooloose/nerdcommenter'
 " Initialize plugin system
 call plug#end()
 
-set number
-syntax on
+set number " Show number of line
+set relativenumber " Show relative numbers
+syntax on " Use syntax hightlight
 colorscheme ron
 inoremap jk <ESC>
 
@@ -35,11 +36,8 @@ set smarttab                    " make <tab> and <backspace> smarter
 set scrolloff=4                 " keep at least 5 lines above/below cursor
 set sidescrolloff=4             " keep at least 5 columns left/right of cursor
 
-" Set autoindent from one line to the next
-set autoindent smartindent
-
-" Set cursorline
-set cursorline
+set autoindent smartindent      " Set autoindent from one line to the next
+set cursorline                  " Set cursorline
 
 " Show the line and column number of the cursor position, separated by a comma
 set ruler
@@ -96,10 +94,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Using mouse
-set mouse="a"
+set mouse=a
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
-map <F7> :tabprevious <CR>
-map <F8> :tabnext <CR>
+noremap <F7> :tabprevious <CR>
+noremap <F8> :tabnext <CR>
+
+set showcmd " Show partial command in status line
