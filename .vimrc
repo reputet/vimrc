@@ -2,10 +2,10 @@
 " Use vim-plug for plugin managing
 " https://github.com/junegunn/vim-plug
 " ====================================================================
-"
+
 " Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
-"
+
 call plug#begin('~/.vim/plugged')
 
 "  The plugin provides mappings to easily delete, change and add such
@@ -29,6 +29,7 @@ call plug#end()
 " ====================================================================
 " General settings
 " ====================================================================
+
 set number                     " show number of line
 set relativenumber             " show relative numbers
 set numberwidth=4              " set width of numbers 4 spaces
@@ -79,8 +80,17 @@ set wrap
 " Mappings
 " ==============================
 
-" set leader key to the ","
-let mapleader = ","
+" set leader key to the <Space>
+let mapleader = " "
+
+" inverse word letters
+nnoremap <leader>u viw~E
+
+" open .vimrc for edit in vertical split
+nnoremap <leader>vo :vsplit $MYVIMRC<CR>
+
+" read (source) .vimrc file and apply changes right now
+nnoremap <leader>vs :source $MYVIMRC<CR>
 
 " moving in wrap lines
 nnoremap j gj
