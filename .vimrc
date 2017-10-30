@@ -34,9 +34,9 @@ set number                     " show number of line
 set relativenumber             " show relative numbers
 set numberwidth=4              " set width of numbers 4 spaces
 set colorcolumn=80             " show vertical line
-syntax on                      " use syntax hightlight
+syntax on                      " use syntax highlight
 set mouse=a                    " use mouse
-colorscheme ron                " colorscheme
+colorscheme ron                " color scheme
 
 " Tabs
 set tabstop=4
@@ -72,7 +72,7 @@ set showcmd                    " show partial command in status line
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
-" When on, lines longer than the width of the window will wrap and displayin
+" When on, lines longer than the width of the window will wrap and display in
 " continues on the next line.
 set wrap
 
@@ -82,15 +82,17 @@ set wrap
 
 " set leader key to the <Space>
 let mapleader = " "
+let maplocalleader = '\'
 
 " inverse word letters
-nnoremap <leader>u viw~E
+nnoremap <leader>u viw~e
 
 " open .vimrc for edit in vertical split
 nnoremap <leader>vo :vsplit $MYVIMRC<CR>
 
 " read (source) .vimrc file and apply changes right now
-nnoremap <leader>vs :source $MYVIMRC<CR>
+" :noh need for not highlighting the last searched results
+nnoremap <leader>vs :source $MYVIMRC<CR>:noh<CR>
 
 " moving in wrap lines
 nnoremap j gj
@@ -99,17 +101,24 @@ nnoremap k gk
 " exit from insert mode
 inoremap jk <ESC>
 
+" disable <esc> in insert mode, force use jk
+inoremap <esc> <nop>
+
 " using modern regex patterns
 nnoremap / /\v
 vnoremap / /\v
 
-" disable arrow keys in normal mode
+" disable arrow keys in normal and insert modes
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
-" force using hjkl$
+" show error message to force using hjkl instead of arrow keys
 noremap <Up>       :echoerr "Use k instead!"<CR>$
 noremap <Down>     :echoerr "Use j instead!"<CR>$
 noremap <Left>     :echoerr "Use l instead!"<CR>$
@@ -122,5 +131,13 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " changing tabs
-noremap <F7> :tabprevious <CR>
-noremap <F8> :tabnext <CR>
+nnoremap <F7> :tabprevious <CR>
+nnoremap <F8> :tabnext <CR>
+
+" abbreviations
+iabbrev adn and
+iabbrev ro or
+iabbrev whlie while
+iabbrev waht what
+iabbrev fro for
+iabbrev @@ outofspace230@gmail.com
