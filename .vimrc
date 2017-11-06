@@ -101,9 +101,6 @@ nnoremap k gk
 " exit from insert mode
 inoremap jk <ESC>
 
-" disable <esc> in insert mode, force use jk
-inoremap <esc> <nop>
-
 " using modern regex patterns
 nnoremap / /\v
 vnoremap / /\v
