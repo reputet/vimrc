@@ -37,6 +37,7 @@ set colorcolumn=80             " show vertical line
 syntax on                      " use syntax highlight
 set mouse=a                    " use mouse
 colorscheme ron                " color scheme
+set clipboard=unnamedplus      " use system clipboard by default
 
 " Tabs
 set tabstop=4
