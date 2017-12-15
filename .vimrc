@@ -23,6 +23,9 @@ Plug 'yuttie/comfortable-motion.vim'
 " Nerd commenter
 Plug 'scrooloose/nerdcommenter'
 
+" Better-whitespace
+Plug 'ntpeters/vim-better-whitespace'
+
 " Initialize plugin system
 call plug#end()
 
