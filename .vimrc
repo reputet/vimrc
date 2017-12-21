@@ -58,14 +58,14 @@ set cursorline                 " Set cursorline
 " Show the line and column number of the cursor position, separated by a comma
 set ruler
 
-" Make Vim deal with case-sensitive search intelligently. 
+" Make Vim deal with case-sensitive search intelligently.
 " If you search for an all-lowercase string your search will be
 " case-insensitive, but if one or more characters is uppercase the search will
 " be case-sensitive.
 set ignorecase
 set smartcase
 
-" Searching...
+" Searching
 set hlsearch                   " enable search highlight globally
 set incsearch                  " show matches as soon as possible
 set showmatch                  " show matching brackets when typing
@@ -73,12 +73,35 @@ set matchtime=10               " show the matching paren during 1 second
 
 set showcmd                    " show partial command in status line
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
 " When on, lines longer than the width of the window will wrap and display in
 " continues on the next line.
 set wrap
+
+
+" ==============================
+" Plugin settings
+" ==============================
+
+" -----------------------------------------------------------------------------
+
+" NERD commenter
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" -----------------------------------------------------------------------------
+
+" Vim-better-whitespace
+
+" use green color for showing whitespaces
+highlight ExtraWhitespace ctermbg=green
+
+" not to show trailing whitespaces for these filetypes
+let g:better_whitespace_filetypes_blacklist=
+                                 \ ['diff', 'gitcommit', 'unite', 'qf', 'help']
+
+" -----------------------------------------------------------------------------
+
 
 " ==============================
 " Mappings
@@ -142,3 +165,4 @@ iabbrev whlie while
 iabbrev waht what
 iabbrev fro for
 iabbrev @@ outofspace230@gmail.com
+
