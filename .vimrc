@@ -4,6 +4,7 @@
 " ====================================================================
 
 " Automatically install vim-plug if it does not exists
+" Curl is required!
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
