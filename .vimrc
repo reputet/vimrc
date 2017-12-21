@@ -3,9 +3,25 @@
 " https://github.com/junegunn/vim-plug
 " ====================================================================
 
-" Specify a directory for plugins
-" - Avoid using standard Vim directory names like 'plugin'
+" Automatically install vim-plug if it does not exists
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+" For manual installation read the docs
+" https://github.com/junegunn/vim-plug#installation
+"
+" or run the following command:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+" Specify a directory for plugins
+" Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
 "  The plugin provides mappings to easily delete, change and add such
