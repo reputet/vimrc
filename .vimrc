@@ -145,6 +145,10 @@ nnoremap k gk
 " exit from insert mode
 inoremap jk <ESC>
 
+" remove characters without yanking to clipboard
+nnoremap x "_x
+nnoremap X "_X
+
 " using modern regex patterns
 nnoremap / /\v
 vnoremap / /\v
