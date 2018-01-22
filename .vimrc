@@ -72,6 +72,9 @@ set sidescrolloff=4            " keep at least 5 columns left/right of cursor
 set autoindent smartindent     " Set autoindent from one line to the next
 set cursorline                 " Set cursorline
 
+" Get the nice 2-space YAML as the default when hitting "Enter" after the colon
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " Show the line and column number of the cursor position, separated by a comma
 set ruler
 
@@ -186,4 +189,3 @@ iabbrev whlie while
 iabbrev waht what
 iabbrev fro for
 iabbrev @@ outofspace230@gmail.com
-
