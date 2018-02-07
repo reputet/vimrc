@@ -135,11 +135,14 @@ let maplocalleader = '\'
 nnoremap <leader>u viw~e
 
 " open .vimrc for edit in vertical split
-nnoremap <leader>vo :vsplit $MYVIMRC<CR>
+nnoremap <leader>vo :vsplit $MYVIMRC<CR>:noh<CR>
 
 " read (source) .vimrc file and apply changes right now
 " :noh need for not highlighting the last searched results
 nnoremap <leader>vs :source $MYVIMRC<CR>:noh<CR>
+
+" open ~/.ssh/config for edit in vertical split
+nnoremap <leader>vc :vsplit $HOME/.ssh/config<CR>:noh<CR>
 
 " moving in wrap lines
 nnoremap j gj
