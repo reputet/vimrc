@@ -75,6 +75,9 @@ set cursorline                 " Set cursorline
 " Get the nice 2-space YAML as the default when hitting "Enter" after the colon
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" Set Grooby syntax if filename=Jenkinsfile
+autocmd BufNewFile,BufRead Jenkinsfile set syntax=groovy
+
 " Show the line and column number of the cursor position, separated by a comma
 set ruler
 
@@ -192,3 +195,6 @@ iabbrev whlie while
 iabbrev waht what
 iabbrev fro for
 iabbrev @@ outofspace230@gmail.com
+
+" Execute python script
+nnoremap <buffer> <F9> :exec '!clear; python' shellescape(@%, 1)<cr>
